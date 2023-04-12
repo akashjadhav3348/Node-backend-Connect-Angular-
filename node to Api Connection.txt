@@ -1,0 +1,59 @@
+step 1: npm init
+step 2: npm node
+step 3: npm install -g express  
+step 4: npm install express --save   
+step 5: npm install body-parser --save   
+step 6: npm install cookie-parser --save   
+step 7: npm install multer --save   
+step 8: npm i cors
+step 9: npm i body-parser
+step 10: nodemon // for Program run Command
+
+URL: localhost:8000
+
+
+
+
+ar express = require('express'); 
+var cors = require('cors'); 
+var bodyParser = require('body-parser');
+var app = express(); 
+
+    app.use(cors());
+    app.use(function(req, res, next) {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+      res.setHeader('Access-Control-Allow-Credentials', true);
+      next();
+    });
+
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({
+        extended:true
+    }));
+    app.use(express.static('public'));
+      
+
+
+      // Enter API DATA
+        app.get('/',function(req,res){
+          var data=[
+          {
+            "userId": 1,
+            "id": 1,
+            "title": "delectus aut autem",
+            "completed": false
+          ];
+        res.send(data);
+        })
+    // End APi data
+
+
+  var server = app.listen(8000, function () {  
+  var host = server.address().address  
+    var port = server.address().port  
+   console.log("Example app listening at http://%s:%s", host, port)  
+  })  
+
+
