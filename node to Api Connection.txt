@@ -7,7 +7,8 @@ step 6: npm install cookie-parser --save
 step 7: npm install multer --save   
 step 8: npm i cors
 step 9: npm i body-parser
-step 10: nodemon // for Program run Command
+step 10: npm install mysql2
+step 11: nodemon // for Program run Command
 
 URL: localhost:8000
 
